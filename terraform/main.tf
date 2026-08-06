@@ -34,7 +34,7 @@ resource "aws_security_group" "ssh" {
 }
 
 resource "aws_instance" "demo" {
-  ami                    = ami-00b0a08d4568c22e8
+  ami                    = "ami-00b0a08d4568c22e8"
   instance_type          = var.instance_type
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.ssh.id]
