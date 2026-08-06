@@ -22,7 +22,7 @@ resource "aws_security_group" "ssh" {
 
 
 resource "aws_instance" "demo" {
-  ami                    = "ami-00b0a08d4568c22e8"
+  ami                    = "ami-01a00762f46d584a1"
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.ssh.id]
