@@ -24,13 +24,12 @@ resource "aws_security_group" "ssh" {
 resource "aws_instance" "demo" {
   ami                    = "ami-00b0a08d4568c22e8"
   instance_type          = var.instance_type
-  key_name               = var.key_name
+  subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.ssh.id]
+  key_name               = var.key_name
 
   tags = {
-    Name        = "web-server"
-    Role        = "web"
-    Environment = "dev"
-    ManagedBy   = "Terraform"
+    Name = "web-server"
+    Role = "web"
   }
 }
