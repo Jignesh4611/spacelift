@@ -9,6 +9,6 @@
         update_cache: yes
 
     - name: Install htop
-      apt:
+      apt: 
         name: htop
         state: present
